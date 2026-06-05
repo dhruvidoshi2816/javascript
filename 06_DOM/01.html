@@ -1,0 +1,104 @@
+ <!-- 
+  DOM - Document Object Model
+
+The Document Object Model (DOM) is a structured way for web browsers to represent and interact with HTML pages, treating every part of a page (like tags, text, and attributes) as objects.(It's how JavaScript “talks” to HTML.)
+The DOM is explained as a model that represents the structure of an HTML document as a tree of objects (head, body, p, img ). Every element, attribute, and text is considered a "node" in this tree
+
+    Example HTML:
+    <html>
+    <body>
+        <h1>Hello</h1>
+        <p>Paragraph</p>
+    </body>
+    </html>
+
+    <!-- Corresponding DOM Tree: -->
+
+    <!-- Document
+    └── html
+        └── body
+            ├── h1
+            │    └── "Hello"
+            └── p
+                └── "Paragraph"
+
+# Window and Document :-
+-The browser creates a window object that represents the browser tab or window.
+-window contains many properties and methods — one of them is document.
+-The document object represents the webpage and provides access to:
+    HTML elements.
+    Document structure.
+    Methods for DOM manipulation.
+
+    console.log(window.document); // Outputs the entire HTML document and methods for manipulation
+    console.log(document); //outputs entire document
+    console.dir(windows); //Outputs the entire HTML document and methods for manipulation
+
+
+!! Collections like HTMLCollection or NodeList are used to handle groups of elements, but they differ from standard arrays. 
+--> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>DOM learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: white
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading">DOM learning
+            <span style="display: none;">test</span>
+        </h1>
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+</body>
+</html>
+
+<!-- 1.innerHTML: returns all html nodes 
+2.textContent : returns all text content
+3.innerText : gives the text in the selected node
+4.querySelector
+5.querySelectorAll
+6.getAttribute
+7.setAttribute 
+
+Difference between innerText and textContent: 
+
+innerText will only show what is visible on the page. 
+
+textContent will show all the texts even if it's hidden due to any CSS property being applied to the text.
+
+-->
+
+<!-- (-> DOM[All Document elements are objects in javascript] 
+    -> window is a global object which contains document object
+    -> console.dir(document) gives the document object as it is
+    -> document.baseURI - give the base url
+    -> document.getElementById() - used to select the element with id
+
+    -> targeting the elements [elements ko catch karna]
+    -> document.getElementByClassName() //returns HTML collection
+
+    -> element.className - gives the class name [used in react]
+    -> element.id = gives the id
+    -> element.getAttribute('att_name')
+    -> element.setAttribute('att_name','att_value') - overwrites the pre-existing attribute
+    -> element.style.color = 'red'
+
+    -> element.textContent =  gives the display:none element too
+    -> element.innerText = does not give the display:none elements
+    -> element.innerHTML = gives the html too
+
+    -> element.querySelector('any') = it can take any selector like we give in css
+    -> We can also use querySelector or any selecting method on any element which contains some child nodes
+    -> We can use forEach on NodeList which comes from querySelectorAll()
+    -> NODELIST AND HTML COLLECTION are not pure arrays but nodelist has forEach() method
+    -> Html collection do not have forEach() so it needs to be converted to array first
+    -> Both nodelist & htmlcollection can be converted into array by using Array.from(nodeList/HtmlCollection) -->
